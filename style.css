@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #810B38;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    color: #F1E2D1;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #DCC3AA;
+    padding: 20px;
+    margin: 20px 0px 20px 0px;
+}
+
+.top .date {
+    display: flex;
+    gap: 30px;
+}
+
+.top .date button {
+    background-color: #541A1A;
+    padding: 5px;
+    text-align: center;
+    border-radius: 8px;
+    color: #F1E2D1;
+    margin-left: 30px;
+}
+
+.top .date button:hover {
+    background-color: #361010;
+    color: #ffffff;
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: all 0.25s ease-in-out;
+}
+
+.top .date p {
+    margin-top: 6px;
+    color: black;
+    /* font-weight: bold; */
+    font-size: larger;
+}
+
+.top #dateInput{
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.top #create {
+    background-color: #541A1A;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    border-radius: 8px;
+    color: #F1E2D1;
+    margin-right: 30px;
+}
+
+.top #create:hover {
+    background-color: #361010;
+    color: #ffffff;
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: all 0.25s ease-in-out;
+}
+
+.categoryList {
+    display: flex;
+    overflow-x: auto;
+    gap: 150px;
+    margin-bottom: 30px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.categoryList button {
+    background-color: #F1E2D1;
+    padding: 20px 30px 20px 30px;
+    text-align: center;
+    border-radius: 20px 0px 20px 0px;
+    color: #541A1A;
+    flex-shrink: 0;
+    font-weight: 600;
+}
+
+.categoryList button:hover {
+    background-color: #361010;
+    color: #ffffff;
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: all 0.25s ease-in-out;
+}
+
+.categoryList::-webkit-scrollbar {
+    display: none;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    margin: 10px 20px 30px 20px;
+}
+
+.cards .card {
+    max-width: 400px;
+    max-height: 240px;
+    background-color: #DCC3AA;
+    border-radius: 30px 3px 40px 3px;
+    padding: 20px;
+    color: #541A1A;
+    /* line-height: 30px; */
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3), 5px 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.card p:nth-child(1) {
+    font-weight: bolder;
+    font-size: larger;
+    margin-bottom: 10px;
+}
+.card p:nth-child(2) {
+    margin-bottom: 10px;
+}
+
+.card p:nth-child(3) {
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+}
+
+.card p:nth-child(4) {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card button {
+    background-color: #541A1A;
+    padding: 8px 15px 8px 15px;
+    text-align: center;
+    border-radius: 8px;
+    color: #F1E2D1;
+    margin: 20px 40px 0px 0px;
+}
+
+.card button:hover {
+   background-color: #361010;
+    color: #ffffff;
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: all 0.25s ease-in-out;
+}
+
+/* .......................................................................................................... */
+.createCard {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #F1E2D1;
+    width: 400px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: rgba(255, 0, 140, 0.17) 0px -23px 25px 0px inset, rgba(255, 0, 140, 0.15) 0px -36px 30px 0px inset, rgba(255, 0, 140, 0.1) 0px -79px 40px 0px inset, rgba(255, 0, 140, 0.06) 0px 2px 1px, rgba(255, 0, 140, 0.09) 0px 4px 2px, rgba(255, 0, 140, 0.09) 0px 8px 4px, rgba(255, 0, 140, 0.09) 0px 16px 8px, rgba(255, 0, 140, 0.09) 0px 32px 16px;
+}
+
+.createCard h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    color: #541A1A;
+}
+
+.createCard form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-size: 17px;
+    font-weight: bold;
+    color: #541A1A;
+}
+
+.createCard form input {
+    background: transparent;
+    border: 1px solid #541A1A;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.createCard form select {
+    background: transparent;
+    border: 1px solid #541A1A;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.createCard form button {
+    background-color: #541A1A;
+    color: #F1E2D1;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    margin-left: 30px;
+    margin-top: 4px;
+}
+
+.createCard form button:hover {
+    background-color: #361010;
+    color: #ffffff;
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: all 0.25s ease-in-out;
+}
