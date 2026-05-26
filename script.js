@@ -1,6 +1,7 @@
 let cards = document.querySelector(".cards")
 let selectDate = document.querySelector("#selectDate")
 let dateInput = document.querySelector("#dateInput")
+let categoryList = document.querySelector(".categoryList")
 
 
 function renderCards(data){
@@ -91,7 +92,7 @@ dateInput.addEventListener("change",(e)=>{
         return card.date === dateInput.value;
     })
     if(filteredCards.length===0){
-        return alert("No Cards Found")
+        return alert("No Cards Found !!")
     }
     renderCards(filteredCards);
 
@@ -108,6 +109,30 @@ dateInput.addEventListener("change",(e)=>{
     dateOutput.textContent=changedFormate;
     
 })
+
+categoryList.addEventListener("click",(e)=>{
+    if(e.target.tagName==="BUTTON"){
+
+        let allButton = categoryList.querySelectorAll("button")
+
+        allButton.forEach((button)=>{
+            button.classList.remove("active")
+        })
+
+        e.target.classList.add("active")
+
+        let clickedCategory = e.target.textContent;
+        let allcards=JSON.parse(localStorage.getItem("workTask"))||[];
+        let filteredCards = allcards.filter((card)=>{
+            return card.category===clickedCategory;
+        })
+        if(filteredCards.length===0){
+            return alert("No Card Found !!")
+        }
+        renderCards(filteredCards)
+    }
+})
+
 
 let allcards=JSON.parse(localStorage.getItem("workTask"))||[];
 renderCards(allcards)

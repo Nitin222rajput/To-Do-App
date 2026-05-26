@@ -115,6 +115,11 @@ main h1 {
     display: none;
 }
 
+.categoryList button.active{
+    background-color: black;
+    color: white;
+}
+
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
